@@ -8,7 +8,7 @@ RUN yum install -y wget unzip && \
 # Download JDK 8
 RUN wget -q --no-check-certificate -c \
     --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-    "http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz" \
+    "http://download.oracle.com/otn-pub/java/jdk/8u131-b11/jdk-8u131-linux-x64.tar.gz" \
     -O jdk8.tar.gz && \
     tar -xzf jdk8.tar.gz -C /opt && \
     rm jdk8.tar.gz
