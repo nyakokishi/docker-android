@@ -28,7 +28,8 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 ENV PATH $PATH:$ANDROID_HOME/build-tools/25.0.3
-RUN $ANDROID_HOME/tools/bin/sdkmanager --licenses
+RUN /opt/android-sdk-linux/tools/bin/sdkmanager --licenses
+
 # Install Android SDK components
 RUN echo y | android update sdk --no-ui --all --filter \
     "platform-tools,build-tools-23.0.3,build-tools-24.0.3,build-tools-25.0.2,build-tools-25.0.3,android-23,android-24,android-25" && \
