@@ -14,7 +14,7 @@ RUN wget -q --no-check-certificate -c \
     rm jdk8.tar.gz
 
 # Configure Java Environment
-ENV JAVA8_HOME /opt/jdk1.8.0_113
+ENV JAVA8_HOME /opt/jdk1.8.0_131
 ENV JAVA_HOME $JAVA8_HOME
 ENV PATH $PATH:$JAVA_HOME/bin
 
