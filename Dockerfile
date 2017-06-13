@@ -28,13 +28,16 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 ENV PATH $PATH:$ANDROID_HOME/build-tools/25.0.3
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager --licenses
 
 # Install Android SDK components
 RUN echo y | android update sdk --no-ui --all --filter \
     "platform-tools,build-tools-23.0.3,build-tools-24.0.3,build-tools-25.0.2,build-tools-25.0.3,android-23,android-24,android-25" && \
     echo y | android update sdk --no-ui --all --filter \
     "extra-android-m2repository,extra-google-m2repository,extra-android-support"
+
+RUN mkdir -p "/opt/android-sdk-linux/licenses"
+RUN echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "/opt/android-sdk-linux/licenses/android-sdk-license"
+RUN echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "/opt/android-sdk-linux/licenses/android-sdk-preview-license"
 
 # Setup Gradle
 ENV GRADLE_VERSION 3.1
