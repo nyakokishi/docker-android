@@ -19,7 +19,7 @@ ENV JAVA_HOME $JAVA8_HOME
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # Download Android SDK tools
-RUN wget -q "http://dl.google.com/android/android-sdk_r26.0.0-linux.tgz" -O android-sdk.tgz && \
+RUN wget -q "http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz" -O android-sdk.tgz && \
     tar -xzf android-sdk.tgz -C /opt && \
     rm android-sdk.tgz
 
