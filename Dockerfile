@@ -19,7 +19,7 @@ ENV JAVA_HOME $JAVA8_HOME
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # Download Android SDK tools
-RUN wget -q "http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz" -O android-sdk.tgz && \
+RUN wget -q "http://dl.google.com/android/android-sdk_r26.0.0-linux.tgz" -O android-sdk.tgz && \
     tar -xzf android-sdk.tgz -C /opt && \
     rm android-sdk.tgz
 
@@ -27,11 +27,11 @@ RUN wget -q "http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz" -O andr
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
-ENV PATH $PATH:$ANDROID_HOME/build-tools/25.0.3
+ENV PATH $PATH:$ANDROID_HOME/build-tools/26.0.3
 
 # Install Android SDK components
 RUN echo y | android update sdk --no-ui --all --filter \
-    "platform-tools,build-tools-23.0.3,build-tools-24.0.3,build-tools-25.0.2,build-tools-25.0.3,android-23,android-24,android-25" && \
+    "platform-tools,build-tools-23.0.3,build-tools-24.0.3,build-tools-25.0.2,build-tools-25.0.3,build-tools-26.0.3,android-23,android-24,android-25,android-26" && \
     echo y | android update sdk --no-ui --all --filter \
     "extra-android-m2repository,extra-google-m2repository,extra-android-support"
 
