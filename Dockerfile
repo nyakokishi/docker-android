@@ -31,7 +31,7 @@ ENV PATH $PATH:$ANDROID_HOME/build-tools/26.0.3
 
 # Install Android SDK components
 RUN echo y | android update sdk --no-ui --all --filter \
-    "platform-tools,build-tools-23.0.3,build-tools-24.0.3,build-tools-25.0.2,build-tools-25.0.3,build-tools-26.0.3,android-23,android-24,android-25,android-26" && \
+    "platform-tools,build-tools-25.0.3,build-tools-26.0.3,android-25,android-26" && \
     echo y | android update sdk --no-ui --all --filter \
     "extra-android-m2repository,extra-google-m2repository,extra-android-support"
 
@@ -40,7 +40,7 @@ RUN echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "/opt/android-sdk-lin
 RUN echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "/opt/android-sdk-linux/licenses/android-sdk-preview-license"
 
 # Setup Gradle
-ENV GRADLE_VERSION 3.3
+ENV GRADLE_VERSION 4.5
 RUN wget -q "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -O gradle.zip && \
     unzip -q gradle.zip -d /opt && \
     ln -s "/opt/gradle-${GRADLE_VERSION}/bin/gradle" /usr/bin/gradle && \
