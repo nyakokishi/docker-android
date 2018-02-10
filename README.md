@@ -11,19 +11,19 @@ It use CentOS 7 as default base image. But you have another choice base on Ubunt
 
 - Oracle Java 8
 - Android SDK
- - Build Tools 23.0.3 & 24.0.3
- - Platform SDK 23 & 24
-- Pre-installed Gradle version 3.1
+ - Build Tools 25.0.3 & 26.0.3
+ - Platform SDK 25 & 26
+- Pre-installed Gradle version 4.5
 
 ## Usage
 
 You can pull the image form DaoCloud's image repository by using `docker pull` or [`dao pull`](https://dashboard.daocloud.io/mirror).
 
 ```sh
-docker pull daocloud.io/nekocode/docker-android:<lastest-verion>
-dao pull daocloud.io/nekocode/docker-android:<lastest-verion>
+docker pull daocloud.io/nicokishi/docker-android:<lastest-verion>
+dao pull daocloud.io/nicokishi/docker-android:<lastest-verion>
 ```
 
-You can get the `<lastest-verion>` [here](https://dashboard.daocloud.io/packages/4c0f5468-9623-4ffb-8dd2-e2680ba9ab9d).
+You can get the `<lastest-verion>` [here](https://dashboard.daocloud.io/packages/98ecf23a-8bd1-4135-a1c0-ac18b6d27ab1).
 
 In CI enviroment, you can use `gradle app:assembleRelease` instead of `./gradlew app:assembleRelease` to speed up your build.
