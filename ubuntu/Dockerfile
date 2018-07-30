@@ -30,11 +30,11 @@ RUN wget -q "http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz" -O andr
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
-ENV PATH $PATH:$ANDROID_HOME/build-tools/27.0.3
+ENV PATH $PATH:$ANDROID_HOME/build-tools/28.0.1
 
 # Install Android SDK components
 RUN echo y | android update sdk --no-ui --all --filter \
-    "platform-tools,build-tools-25.0.3, build-tools-26.0.3,build-tools-27.0.3,android-25,android-26,android-27" && \
+    "platform-tools,build-tools-26.0.3,build-tools-27.0.3,build-tools-28.0.1,android-26,android-27,android-28" && \
     echo y | android update sdk --no-ui --all --filter \
     "extra-android-m2repository,extra-google-m2repository,extra-android-support"
 
@@ -43,7 +43,7 @@ RUN echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "/opt/android-sdk-lin
 RUN echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "/opt/android-sdk-linux/licenses/android-sdk-preview-license"
 
 # Setup Gradle
-ENV GRADLE_VERSION 4.1
+ENV GRADLE_VERSION 4.6
 RUN wget -q "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -O gradle.zip && \
     unzip -q gradle.zip -d /opt && \
     ln -s "/opt/gradle-${GRADLE_VERSION}/bin/gradle" /usr/bin/gradle && \
