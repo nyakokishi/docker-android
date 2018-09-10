@@ -27,11 +27,11 @@ RUN wget -q "http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz" -O andr
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
-ENV PATH $PATH:$ANDROID_HOME/build-tools/28.0.1
+ENV PATH $PATH:$ANDROID_HOME/build-tools/28.0.2
 
 # Install Android SDK components
 RUN echo y | android update sdk --no-ui --all --filter \
-    "platform-tools,build-tools-26.0.3,build-tools-27.0.3,build-tools-28.0.1,android-26,android-27,android-28" && \
+    "platform-tools,build-tools-26.0.3,build-tools-27.0.3,build-tools-28.0.2,android-26,android-27,android-28" && \
     echo y | android update sdk --no-ui --all --filter \
     "extra-android-m2repository,extra-google-m2repository,extra-android-support"
 
